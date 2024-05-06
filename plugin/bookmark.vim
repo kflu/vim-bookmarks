@@ -250,8 +250,8 @@ function! BookmarkLoad(target_file, startup, silent)
     endtry
   endif
 endfunction
-command! -nargs=1 LoadBookmarks call CallDeprecatedCommand('BookmarkLoad', [<f-args>, 0, 0])
-command! -nargs=1 BookmarkLoad call BookmarkLoad(<f-args>, 0, 0)
+command! -nargs=1 -complete=file LoadBookmarks call CallDeprecatedCommand('BookmarkLoad', [<f-args>, 0, 0])
+command! -nargs=1 -complete=file BookmarkLoad call BookmarkLoad(<f-args>, 0, 0)
 
 function! CallDeprecatedCommand(fun, args)
   echo "Warning: Deprecated command, please use ':". a:fun ."' instead"
